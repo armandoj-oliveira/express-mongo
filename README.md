@@ -9,9 +9,6 @@ Criação de uma **API REST** utilizando **Node.js**, **Express** e **MongoDB**.
 ## 📌 **Índice**
 - [📌 Tecnologias](#-tecnologias)
 - [⚡ Instalação](#-instalação)
-- [📖 Endpoints da API](#-endpoints-da-api)
-- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-- [📄 Licença](#-licença)
 
 ---
 
