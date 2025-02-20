@@ -1,21 +1,36 @@
 import mongoose from 'mongoose';
-import { autorSchema } from './Autor.js';
 
 const livroSchema = new mongoose.Schema({
-    id: { type: mongoose.Schema.Types.ObjectId },
+    id: {
+        type: mongoose.Schema.Types.ObjectId
+    },
     titulo: {
         type: String,
-        required: [true, "O título do livro é obrigatório."]
+        required: [true, "O titulo do livro o obrigatÃ³rio."]
     },
     editora: {
         type: String,
-        required: [true, "A editora do livro é obrigatória."]
+        required: [true, "A editora do livro o obrigatÃ³ria."],
+        enum: {
+            values: ["Pe de Letra", "VerÃ­ssimo", "Geektopia", "Panini Comics", "Marvel Comics", "DC Comics", "Arquiero"],
+            message: "A editora {VALUE} nÃ£o Ã© um valor permitido."
+        }
     },
-    preco: { type: Number },
-    paginas: { type: Number },
+    preco: {
+        type: Number
+    },
+    paginas: {
+        type: Number,
+        validate: {
+            validator: (valor) => {
+                return valor >= 10 && valor <= 2000;
+            },
+            message: "O nÃºmero de pÃ¡gina necessita estar entre 20 a 2000 pÃ¡ginas. O valor fornecido foi: {VALUE}."
+        }
+    },
     autor: {
         type: mongoose.Schema.Types.ObjectId, ref: 'autores',
-        required: [true, "O(a) autor(a) é obrigatório(a)."]
+        required: [true, "O(a) autor(a) Ã© obrigatÃ³rio(a)."]
     },
 }, { versionKey: false });
 
