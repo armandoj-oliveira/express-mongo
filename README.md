@@ -26,5 +26,5 @@ Este projeto utiliza as seguintes tecnologias:
 ## ⚡ **Instalação**
 1️⃣ **Clone este repositório:**
 ```sh
-git clone https://github.com/seu-usuario/express-mongo.git
+git clone https://github.com/armandoj-oliveira/express-mongo.git
 
